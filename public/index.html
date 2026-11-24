@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#301942">
+    <title>Coffee Studio | Your daily ritual</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <section class="auth-screen" id="authPage">
+        <div class="auth-visual" aria-hidden="true">
+            <div class="auth-visual-inner">
+                <span class="eyebrow eyebrow-light">A LITTLE MOMENT FOR YOU</span>
+                <p class="auth-display">Coffee is<br>our love<br><em>language.</em></p>
+                <span class="auth-foot">Coffee Studio · Crafted with care</span>
+            </div>
+            <div class="auth-orb orb-one"></div>
+            <div class="auth-orb orb-two"></div>
+        </div>
+        <div class="auth-panel">
+            <div class="auth-form-wrap">
+                <div class="brand brand-dark"><span>coffee<span class="brand-accent">.</span>studio</span></div>
+                <p class="auth-kicker">WELCOME BACK</p>
+                <h1>Good coffee.<br><span class="headline-accent">Great company.</span></h1>
+                <p class="auth-intro">Sign in to choose your favorites, or create an account to get started.</p>
+                <div class="auth-form">
+                    <label for="name">Name <small>for registration</small></label>
+                    <input id="name" name="name" type="text" autocomplete="name" placeholder="Your name">
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com">
+                    <label for="password">Password</label>
+                    <input id="password" name="password" type="password" autocomplete="current-password"
+                        placeholder="Enter your password">
+                </div>
+                <div class="auth-buttons">
+                    <button type="button" onclick="register()">Create account <span aria-hidden="true">↗</span></button>
+                    <button type="button" class="secondary" onclick="login()">Log in</button>
+                </div>
+                <p id="authMessage" role="status"></p>
+                <p class="auth-note">Your next favorite coffee is one click away.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="menuPage" class="page hidden">
+        <header class="site-header">
+            <nav class="navbar" aria-label="Main navigation">
+                <div class="brand"><span>coffee<span class="brand-accent">.</span>studio</span></div>
+                <div class="nav-links">
+                    <button type="button" onclick="scrollToSection('coffee')">Coffee</button>
+                    <button type="button" onclick="scrollToSection('desserts')">Desserts</button>
+                    <button type="button" class="logout" onclick="logout()">Log out <span
+                            aria-hidden="true">↗</span></button>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero" aria-label="Welcome">
+                <div class="hero-copy">
+                    <p class="eyebrow">YOUR DAILY RITUAL, REIMAGINED</p>
+                    <h1>Good coffee.<br><span>Better moments.</span></h1>
+                    <p class="hero-description">A little indulgence, made just for you. Pick a drink, customize your
+                        cup, and enjoy.</p>
+                    <button type="button" class="hero-button" onclick="scrollToSection('coffee')">Explore the menu <span
+                            aria-hidden="true">↗</span></button>
+                </div>
+                <div class="hero-art" aria-hidden="true">
+                    <div class="art-halo halo-one"></div>
+                    <div class="art-halo halo-two"></div>
+                    <span class="art-small-label">freshly brewed<br>with love</span>
+                    <span class="art-main-word">coffee.</span>
+                    <span class="art-caption">SIP · SAVOR · REPEAT</span>
+                </div>
+            </section>
+
+            <section id="coffee" class="catalog-section">
+                <div class="section-head">
+                    <div>
+                        <p class="section-kicker">01 / THE CLASSICS</p>
+                        <h2 class="section-title">Coffee <span class="section-dot">.</span></h2>
+                    </div>
+                    <p class="section-aside">Made for every mood</p>
+                </div>
+                <div class="menu-grid">
+                    <article class="menu-item" onclick="openCoffeeModal('Espresso', 890, '/images/espresso.png')"
+                        tabindex="0" role="button"
+                        onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openCoffeeModal('Espresso',890,'/images/espresso.png')}"
+                        aria-label="Customize Espresso, 890 tenge">
+                        <div class="product-visual tint-lilac"><img src="images/espresso.png" alt="Espresso"
+                                loading="lazy"><span class="product-tag">BOLD & RICH</span></div>
+                        <div class="product-info">
+                            <div>
+                                <h3>Espresso</h3>
+                                <p class="product-sub">Small cup, big energy</p>
+                            </div>
+                            <div class="product-footer"><span class="price">890 ₸</span><span class="round-add"
+                                    aria-hidden="true">+</span></div>
+                        </div>
+                    </article>
+                    <article class="menu-item" onclick="openCoffeeModal('Americano', 990, '/images/americano.png')"
+                        tabindex="0" role="button"
+                        onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openCoffeeModal('Americano',990,'/images/americano.png')}"
+                        aria-label="Customize Americano, 990 tenge">
+                        <div class="product-visual tint-pink"><img src="images/americano.png" alt="Americano"
+                                loading="lazy"><span class="product-tag">SMOOTH & SIMPLE</span></div>
+                        <div class="product-info">
+                            <div>
+                                <h3>Americano</h3>
+                                <p class="product-sub">A timeless favorite</p>
+                            </div>
+                            <div class="product-footer"><span class="price">990 ₸</span><span class="round-add"
+                                    aria-hidden="true">+</span></div>
+                        </div>
+                    </article>
+                    <article class="menu-item" onclick="openCoffeeModal('Cappuccino', 1290, '/images/cappuccino.png')"
+                        tabindex="0" role="button"
+                        onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openCoffeeModal('Cappuccino',1290,'/images/cappuccino.png')}"
+                        aria-label="Customize Cappuccino, 1290 tenge">
+                        <div class="product-visual tint-cream"><img src="images/cappuccino.png" alt="Cappuccino"
+                                loading="lazy"><span class="product-tag">SOFT & VELVETY</span></div>
+                        <div class="product-info">
+                            <div>
+                                <h3>Cappuccino</h3>
+                                <p class="product-sub">Cloud-like milk foam</p>
+                            </div>
+                            <div class="product-footer"><span class="price">1 290 ₸</span><span class="round-add"
+                                    aria-hidden="true">+</span></div>
+                        </div>
+                    </article>
+                    <article class="menu-item" onclick="openCoffeeModal('Latte', 1190, '/images/latte.png')"
+                        tabindex="0" role="button"
+                        onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openCoffeeModal('Latte',1190,'/images/latte.png')}"
+                        aria-label="Customize Latte, 1190 tenge">
+                        <div class="product-visual tint-rose"><img src="images/latte.png" alt="Latte"
+                                loading="lazy"><span class="product-tag">CREAMY FAVORITE</span></div>
+                        <div class="product-info">
+                            <div>
+                                <h3>Latte</h3>
+                                <p class="product-sub">A comforting classic</p>
+                            </div>
+                            <div class="product-footer"><span class="price">1 190 ₸</span><span class="round-add"
+                                    aria-hidden="true">+</span></div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="quote-strip" aria-label="Our philosophy">
+                <p>Every cup deserves a little magic<span>.</span></p><span>MADE WITH CARE · SERVED WITH LOVE</span>
+            </section>
+
+            <section id="desserts" class="catalog-section desserts-section">
+                <div class="section-head">
+                    <div>
+                        <p class="section-kicker">02 / SOMETHING SWEET</p>
+                        <h2 class="section-title">Desserts <span class="section-dot">.</span></h2>
+                    </div>
+                    <p class="section-aside">The sweetest part of your day</p>
+                </div>
+                <div class="menu-grid">
+                    <article class="menu-item">
+                        <div class="product-visual tint-rose"><img src="images/croissant.png" alt="Croissant"
+                                loading="lazy"><span class="product-tag">FRESH & FLAKY</span></div>
+                        <div class="product-info">
+                            <div>
+                                <h3>Croissant</h3>
+                                <p class="product-sub">Buttery golden layers</p>
+                            </div>
+                            <div class="product-footer"><span class="price">1 590 ₸</span><button type="button"
+                                    class="round-add" onclick="addItem('Croissant',1590)"
+                                    aria-label="Add Croissant">+</button></div>
+                        </div>
+                    </article>
+                    <article class="menu-item">
+                        <div class="product-visual tint-cream"><img src="images/donut.png" alt="Donut"
+                                loading="lazy"><span class="product-tag">SWEET TREAT</span></div>
+                        <div class="product-info">
+                            <div>
+                                <h3>Donut</h3>
+                                <p class="product-sub">A little happy moment</p>
+                            </div>
+                            <div class="product-footer"><span class="price">890 ₸</span><button type="button"
+                                    class="round-add" onclick="addItem('Donut',890)" aria-label="Add Donut">+</button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="menu-item">
+                        <div class="product-visual tint-lilac"><img src="images/cheesecake.png" alt="Cheesecake"
+                                loading="lazy"><span class="product-tag">RICH & SILKY</span></div>
+                        <div class="product-info">
+                            <div>
+                                <h3>Cheesecake</h3>
+                                <p class="product-sub">Soft, sweet and lovely</p>
+                            </div>
+                            <div class="product-footer"><span class="price">1 890 ₸</span><button type="button"
+                                    class="round-add" onclick="addItem('Cheesecake',1890)"
+                                    aria-label="Add Cheesecake">+</button></div>
+                        </div>
+                    </article>
+                    <article class="menu-item">
+                        <div class="product-visual tint-pink"><img src="images/macarons.png" alt="Macarons"
+                                loading="lazy"><span class="product-tag">DELICATE BITES</span></div>
+                        <div class="product-info">
+                            <div>
+                                <h3>Macarons</h3>
+                                <p class="product-sub">Colorful, sweet, delicate</p>
+                            </div>
+                            <div class="product-footer"><span class="price">1 390 ₸</span><button type="button"
+                                    class="round-add" onclick="addItem('Macarons',1390)"
+                                    aria-label="Add Macarons">+</button></div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+            <footer class="site-footer"><span>coffee.studio</span><span>A cup of joy, made for you.</span></footer>
+        </main>
+
+        <button type="button" id="cartBtn" onclick="openCartModal()" style="display:none"
+            aria-label="Open shopping cart"><span aria-hidden="true">🛍</span> <span id="cartTotal">0 ₸</span></button>
+
+        <div id="coffeeModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="coffeeName">
+            <div class="modal-content coffee-dialog">
+                <button type="button" class="close" onclick="closeCoffeeModal()" aria-label="Close">×</button>
+                <div class="dialog-image"><img id="coffeeImage" alt="Selected coffee"></div>
+                <p class="section-kicker">MAKE IT YOURS</p>
+                <h3 id="coffeeName"></h3>
+                <p id="coffeePrice" class="dialog-price"></p>
+                <h4>Choose your syrup</h4>
+                <div class="syrups">
+                    <label><input type="radio" name="syrup" value="" checked><span>No syrup</span></label>
+                    <label><input type="radio" name="syrup" value="Caramel"><span>Caramel</span></label>
+                    <label><input type="radio" name="syrup" value="Hazelnut"><span>Hazelnut</span></label>
+                    <label><input type="radio" name="syrup" value="Chocolate"><span>Chocolate</span></label>
+                    <label><input type="radio" name="syrup" value="Popcorn"><span>Popcorn</span></label>
+                </div>
+                <button type="button" class="add-btn" onclick="addCoffeeWithSyrup()">Add to cart <span
+                        aria-hidden="true">↗</span></button>
+            </div>
+        </div>
+
+        <div id="cartModal" class="modal hidden" role="dialog" aria-modal="true" aria-label="My order">
+            <div class="modal-content cart-dialog">
+                <button type="button" class="close" onclick="closeCartModal()" aria-label="Close">×</button>
+                <p class="section-kicker">ALMOST THERE</p>
+                <h2>My order<span class="section-dot">.</span></h2>
+                <p class="order-owner">Ordering for <strong id="userName"></strong></p>
+                <ul id="cartList"></ul>
+                <div class="cart-totals">
+                    <div><span>Subtotal</span><strong><span id="totalKZT">0</span> ₸</strong></div>
+                    <div class="usd"><span>Approx. in USD</span><span>$<span id="totalUSD">—</span></span></div>
+                </div>
+                <button type="button" class="order-btn" onclick="placeOrder()">Place order <span
+                        aria-hidden="true">↗</span></button>
+                <p class="cart-footnote">Order confirmation will appear after your order is created.</p>
+            </div>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+
+</html>
