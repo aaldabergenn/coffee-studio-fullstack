@@ -50,7 +50,21 @@ server.js        Server entry point
 
 ## Screenshots
 
-You can add your own screenshots of the menu, coffee customization modal and shopping cart to a `screenshots/` folder and link them here.
+A look at the Coffee Studio interface, from browsing drinks and desserts to reviewing an order. Screenshots are from the local project.
+
+### Coffee menu
+
+![Coffee Studio coffee menu with espresso, americano, cappuccino and latte](screenshots/coffee-menu.png)
+
+### Desserts menu
+
+![Coffee Studio dessert menu with croissant, donut, cheesecake and macarons](screenshots/desserts-menu.png)
+
+### Shopping cart and currency conversion
+
+![Coffee Studio shopping cart showing an order in KZT and an approximate USD amount](screenshots/shopping-cart.png)
+
+*The USD value shown in the screenshot reflects the exchange-rate result at the time of capture; live results may differ.*
 
 ## Notes
 
